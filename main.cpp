@@ -168,7 +168,7 @@ int loop()
                 if (err_cnt >= 3)
                 {
                     err_cnt = 0;
-                    if (ifname[0] == '\0')
+                    if (ifname[0] != '\0')
                     {
                         getIPByIFace();
                     }
