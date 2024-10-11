@@ -27,7 +27,7 @@ char username[100] = "";
 char password[100] = "";
 char local_ip[100] = "";
 ///////////////////////////
-const char ac_id[] = "23";
+const char ac_id[] = "1";
 const char type[] = "1";
 const char n[] = "200";
 ///////////////////////////
@@ -89,6 +89,7 @@ bool authenticate()
             {
                 if (res->status == 200)
                 {
+                    puts(res->body.c_str());
                     if (strstr(res->body.c_str(), "login_ok"))
                     {
                         printf("Login success\n");
@@ -137,7 +138,7 @@ void getIPByIFace()
 
 bool connectivityTest()
 {
-    httplib::Client cli("http://test.ipw.cn");
+    httplib::Client cli("http://4.ipw.cn");
     auto res = cli.Get("/");
     if (res)
     {
